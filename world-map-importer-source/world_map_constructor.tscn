@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://c3sfaj1410kko"]
+
+[ext_resource type="Script" uid="uid://3drcevm0cewr" path="res://WorldMapConstructorScript.gd" id="1_aj7nq"]
+
+[node name="WorldMapConstructor" type="Node" unique_id=1063491476]
+script = ExtResource("1_aj7nq")
+
+[node name="WorldMapVisualiser" type="Node2D" parent="." unique_id=318325445]
+unique_name_in_owner = true
