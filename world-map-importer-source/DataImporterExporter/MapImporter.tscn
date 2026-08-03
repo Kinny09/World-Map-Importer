@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://d08d2ieju8ewn"]
+
+[ext_resource type="Script" uid="uid://bdvrk2xd00o73" path="res://DataImporterExporter/MapImporterController.gd" id="1_4h4p5"]
+[ext_resource type="Script" uid="uid://o720n4bliiew" path="res://DataImporterExporter/OSMImporter/OSMImporterScript.gd" id="1_kh4pn"]
+
+[node name="MapImporter" type="Node" unique_id=1305667917]
+script = ExtResource("1_4h4p5")
+
+[node name="MapSaver" type="Node" parent="." unique_id=362540935]
+
+[node name="OSMImporter" type="Node" parent="." unique_id=40398903]
+script = ExtResource("1_kh4pn")
+
+[node name="HTTPRequest" type="HTTPRequest" parent="OSMImporter" unique_id=991823131]
+
+[node name="WorldMap" type="Node2D" parent="." unique_id=820642387]
+unique_name_in_owner = true
+
+[node name="Landmass" type="Node2D" parent="WorldMap" unique_id=1244031012]
+
+[node name="BuiltUpAreas" type="Node2D" parent="WorldMap" unique_id=1231840054]
+
+[node name="PlaceLabels" type="Node2D" parent="WorldMap" unique_id=1239347142]
