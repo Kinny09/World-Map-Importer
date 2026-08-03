@@ -7,3 +7,11 @@ script = ExtResource("1_aj7nq")
 
 [node name="WorldMapVisualiser" type="Node2D" parent="." unique_id=318325445]
 unique_name_in_owner = true
+
+[node name="Landmass" type="Node2D" parent="WorldMapVisualiser" unique_id=1386202038]
+
+[node name="BuiltUpArea" type="Node2D" parent="WorldMapVisualiser" unique_id=1631909509]
+
+[node name="CountryLabels" type="Node2D" parent="WorldMapVisualiser" unique_id=1761022237]
+
+[node name="SettlementLabels" type="Node2D" parent="WorldMapVisualiser" unique_id=993196103]

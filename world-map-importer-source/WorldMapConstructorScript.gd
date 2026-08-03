@@ -1,17 +1,51 @@
+# ---------------------------------------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------------------------
+# World Map Constructor
+# ---------------------------------------------------------------------------------------------------------------------------------------
+# ---------------------------------------------------------------------------------------------------------------------------------------
 extends Node
 
-var polygons: Array[PackedVector2Array] = []
+# ---------------------------------------------------------------------------------------------------------------------------------------
+# Constants
+# ---------------------------------------------------------------------------------------------------------------------------------------
+const LandmassFilePath = "res://RawMapData/WorldMapLandmassRaw.txt"
+const BuiltUpAreaFilePath = "res://RawMapData/WorldMapBuiltUpAreasRaw.txt"
+const SettlementLabelFilePath = "res://RawMapData/WorldMapLabelsRaw.txt"
+const CountryLabelFilePath = "res://RawMapData/WorldMapCountryLabelsRaw.txt"
+const MapLayers: Dictionary[String, int] = {
+	"Sea": 0,
+	"Landmass": 1,
+	"BuiltUpArea": 2,
+	"CountryLabels": 3,
+	"SettlementLabels": 3
+}
+const LabelSizes: Dictionary[String, int] = {
+	"country": 100,
+	"settlement": 50,
+}
+var MapColours: Dictionary[String, Color] = {
+	"Sea": Color.from_rgba8(144, 218, 238),
+	"Landmass": Color.from_rgba8(69, 145, 106, 255),
+	"BuiltUpArea": Color.from_rgba8(246, 245, 245, 255)
+}
 
-# Called when the node enters the scene tree for the first time.
+
+# ---------------------------------------------------------------------------------------------------------------------------------------
+# Member Variable Declaration
+# ---------------------------------------------------------------------------------------------------------------------------------------
+var PolygonsToDraw: Array[PackedVector2Array] = []
+
+# ---------------------------------------------------------------------------------------------------------------------------------------
+# CODE
+# ---------------------------------------------------------------------------------------------------------------------------------------
 func _ready() -> void:
-	var landmassesFile = FileAccess.open("res://RawMapData/WorldMapLandmassRaw.txt", FileAccess.READ)
-
-	#while not landmassesFile.eof_reached():
+	# ----------------------------------------- Sorting out the landmasses -----------------------------------------
+	var landmassesFile = FileAccess.open(LandmassFilePath, FileAccess.READ)
 	var previousShapeID = 0
 	var previousPartID = 0
 	var polygonPoints: PackedVector2Array = []
 
-	# Setting up the the landmass polygons
+	# Getting the landmass data from the file
 	while !landmassesFile.eof_reached():
 		var lineToRead = landmassesFile.get_line()
 		var slicedLine = lineToRead.split(",")
@@ -19,7 +53,7 @@ func _ready() -> void:
 		var currentPartID = slicedLine[1].to_int()
 		
 		if currentPartID != previousPartID || previousShapeID != currentShapeID:
-			polygons.append(polygonPoints)
+			PolygonsToDraw.append(polygonPoints)
 			polygonPoints = []
 			var x = slicedLine[2].to_float()
 			var y = slicedLine[3].to_float()
@@ -33,17 +67,41 @@ func _ready() -> void:
 		previousShapeID = currentShapeID
 		previousPartID = currentPartID
 	
+	DrawPolygons("Landmass")
+	
+	# ----------------------------------------- Sorting out the built up areas -----------------------------------------
+	var builtupAreasFile = FileAccess.open(BuiltUpAreaFilePath, FileAccess.READ)
+	previousShapeID = 0
+	polygonPoints = []
+	while !builtupAreasFile.eof_reached():
+		var lineToRead = builtupAreasFile.get_line()
+		var slicedLine = lineToRead.split(",")
+		var currentShapeID = slicedLine[0].to_int()
 		
-	# Constructing the polygons
-	for landmassGeometry in polygons:
-		var slicedLandmassGeometry = Geometry2D.merge_polygons(landmassGeometry, PackedVector2Array([]))
-		for landmassSliceGeometry in slicedLandmassGeometry:
+		if previousShapeID != currentShapeID:
+			PolygonsToDraw.append(polygonPoints)
+			polygonPoints = []
+			var x = slicedLine[1].to_float()
+			var y = slicedLine[2].to_float()
+			polygonPoints.append(Vector2(x, -y))
+			
+		else:
+			var x = slicedLine[1].to_float()
+			var y = slicedLine[2].to_float()
+			polygonPoints.append(Vector2(x, -y))
+			
+		previousShapeID = currentShapeID
+			
+	DrawPolygons("BuiltUpArea")
+		
+## Constructs all the polygons currently in PolygonsToDraw before emptying it
+func DrawPolygons(typeOfItemToDraw: String):
+	for polygonGeometry in PolygonsToDraw:
+		var slicedPolygonGeometry = Geometry2D.merge_polygons(polygonGeometry, PackedVector2Array([]))
+		for polygonSliceGeometry in slicedPolygonGeometry:
 			var newPolygon = Polygon2D.new()
-			newPolygon.set_polygon(landmassSliceGeometry)
-			%WorldMapVisualiser.add_child(newPolygon)
-		
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+			newPolygon.set_polygon(polygonSliceGeometry)
+			newPolygon.color = MapColours[typeOfItemToDraw]
+			newPolygon.z_index = MapLayers[typeOfItemToDraw]
+			%WorldMapVisualiser.get_node(typeOfItemToDraw).add_child(newPolygon)
+	PolygonsToDraw = []

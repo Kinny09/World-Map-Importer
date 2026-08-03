@@ -1,259 +1,259 @@
 SOVEREIGNT,LABEL_X,LABEL_Y
-Indonesia,101.892949,-0.954404
-Malaysia,113.83708,2.528667
-Chile,-72.318871,-38.151771
-Bolivia,-64.593433,-16.666015
-Peru,-72.90016,-12.976679
-Argentina,-64.173331,-33.501159
-United Kingdom,33.790583,35.011042
-Cyprus,33.084182,34.913329
-India,79.358105,22.686852
-China,106.337289,32.498178
-Israel,34.847915,30.911148
-Israel,35.291341,32.047431
-Lebanon,35.992892,34.133368
-Ethiopia,39.0886,8.032795
-South Sudan,,
-Somalia,,
-Kenya,37.907632,0.549043
-Malawi,33.608082,-13.386737
-United Republic of Tanzania,34.959183,-6.051866
-Syria,38.277783,35.006636
-Somaliland,,
-France,2.552275,46.696113
-Suriname,-55.91094,4.143987
-Guyana,-58.942643,5.124317
-South Korea,,
-North Korea,,
-Morocco,-7.187296,31.650723
-Western Sahara,-12.630304,23.967592
-Costa Rica,-84.077922,10.0651
-Nicaragua,-85.069347,12.670697
-Republic of the Congo,,
-Democratic Republic of the Congo,,
-Bhutan,90.040294,27.536685
-Ukraine,32.140865,49.724739
-Belarus,28.417701,53.821888
-Namibia,17.108166,-20.575298
-South Africa,23.665734,-29.708776
-France,-63.049399,18.081302
-Netherlands,-63.070133,18.04088
-Oman,57.336553,22.120427
-Uzbekistan,64.005429,41.693603
-Kazakhstan,68.685548,49.054149
-Tajikistan,72.587276,38.199835
-Lithuania,24.089932,55.103703
-Brazil,-49.55945,-12.098687
-Uruguay,-55.966942,-32.961127
-Mongolia,104.150405,45.997488
-Russia,44.686469,58.249357
-Czechia,15.377555,49.882364
-Germany,9.678348,50.961733
-Estonia,25.867126,58.724865
-Latvia,25.458723,57.066872
-Norway,,
-Sweden,19.01705,65.85918
-Finland,27.276449,63.252361
-Vietnam,105.387292,21.715416
-Cambodia,104.50487,12.647584
-Luxembourg,6.07762,49.733732
-United Arab Emirates,54.547256,23.466285
-Belgium,4.800448,50.785392
-Georgia,43.735724,41.870087
-North Macedonia,21.555839,41.558223
-Albania,20.11384,40.654855
-Azerbaijan,47.210994,40.402387
-Kosovo,,
-Turkey,34.508268,39.345388
-Spain,-3.464718,40.090953
-Laos,102.533912,19.431821
-Kyrgyzstan,74.532637,41.66854
-Armenia,44.800564,40.459077
-Denmark,9.018163,55.966965
-Libya,18.011015,26.638944
-Tunisia,9.007881,33.687263
-Romania,24.972624,45.733237
-Hungary,19.447867,47.086841
-Slovakia,19.049868,48.734044
-Poland,19.490468,51.990316
-Ireland,-7.798588,53.078726
-United Kingdom,,
-Greece,21.72568,39.492763
-Zambia,26.395298,-14.660804
-Sierra Leone,-11.763677,8.617449
-Guinea,-10.016402,10.618516
-Liberia,-9.460379,6.447177
-Central African Republic,20.906897,6.989681
-Sudan,29.260657,16.330746
-Djibouti,42.498825,11.976343
-Eritrea,38.285566,15.787401
-Austria,14.130515,47.518859
-Iraq,43.26181,33.09403
-Italy,11.076907,44.732482
-Switzerland,7.463965,46.719114
-Iran,,
-Netherlands,,
-Liechtenstein,9.559439,47.111405
-Ivory Coast,-5.568618,7.49139
-Republic of Serbia,20.787989,44.189919
-Mali,-2.038455,18.692713
-Senegal,-14.778586,15.138125
-Nigeria,7.50322,9.439799
-Benin,2.352018,10.324775
-Angola,17.984249,-12.182762
-Croatia,16.37241,45.805799
-Slovenia,14.915312,46.06076
-Qatar,51.143509,25.237383
-Saudi Arabia,44.6996,23.806908
-Botswana,24.179216,-22.102634
-Zimbabwe,29.925444,-18.91164
-Pakistan,68.545632,29.328389
-Bulgaria,25.15709,42.508785
-Thailand,101.073198,15.45974
-San Marino,12.441206,43.933916
-Haiti,-72.224051,19.263784
-Dominican Republic,-70.653998,19.104137
-Chad,18.645041,15.142959
-Kuwait,47.313999,29.413628
-El Salvador,-88.890124,13.685371
-Guatemala,-90.497134,14.982133
-East Timor,125.854679,-8.803705
-Brunei,114.551943,4.448298
-Monaco,7.398291,43.739652
-Algeria,2.808241,27.397406
-Mozambique,37.83789,-13.94323
-eSwatini,31.467264,-26.533676
-Burundi,29.917086,-3.332836
-Rwanda,30.103894,-1.897196
-Myanmar,95.804497,21.573855
-Bangladesh,89.684963,24.214956
-Andorra,1.539409,42.547643
-Afghanistan,66.496586,34.164262
-Montenegro,19.143727,42.803101
-Bosnia and Herzegovina,18.06841,44.091051
-Uganda,32.948555,1.972589
-Cuba,,
-Cuba,-77.975855,21.334024
-Honduras,-86.887604,14.794801
-Ecuador,-78.188375,-1.259076
-Colombia,-73.174347,3.373111
-Paraguay,-60.146394,-21.674509
-Brazilian Island,-57.623042,-30.187555
-Portugal,-8.271754,39.606675
-Moldova,28.487904,47.434999
-Turkmenistan,58.676647,39.855246
-Jordan,36.375991,30.805025
-Nepal,83.639914,28.297925
-Lesotho,28.246639,-29.480158
-Cameroon,12.473488,4.585041
-Gabon,11.835939,-0.437739
-Niger,9.504356,17.446195
-Burkina Faso,-1.36388,12.673048
-Togo,1.058113,8.80722
-Ghana,-1.036941,7.717639
-Guinea-Bissau,-14.52413,12.163712
-United Kingdom,-5.3467,36.129426
-United States of America,-97.482602,39.538479
-Canada,-101.9107,60.324287
-Mexico,-102.289448,23.919988
-Belize,-88.712962,17.202068
-Panama,-80.352106,8.72198
-Venezuela,,
-Papua New Guinea,143.910216,-5.695285
-Egypt,,
-Yemen,,
-Mauritania,-9.740299,19.587062
+Indonesia,101.8929,-0.9544
+Malaysia,113.8371,2.5287
+Chile,-72.3189,-38.1518
+Bolivia,-64.5934,-16.666
+Peru,-72.9002,-12.9767
+Argentina,-64.1733,-33.5012
+United Kingdom,33.7906,35.011
+Cyprus,33.0842,34.9133
+India,79.3581,22.6869
+China,106.3373,32.4982
+Israel,34.8479,30.9111
+Israel,35.2913,32.0474
+Lebanon,35.9929,34.1334
+Ethiopia,39.0886,8.0328
+South Sudan,0,0
+Somalia,0,0
+Kenya,37.9076,0.549
+Malawi,33.6081,-13.3867
+United Republic of Tanzania,34.9592,-6.0519
+Syria,38.2778,35.0066
+Somaliland,0,0
+France,2.5523,46.6961
+Suriname,-55.9109,4.144
+Guyana,-58.9426,5.1243
+South Korea,0,0
+North Korea,0,0
+Morocco,-7.1873,31.6507
+Western Sahara,-12.6303,23.9676
+Costa Rica,-84.0779,10.0651
+Nicaragua,-85.0693,12.6707
+Republic of the Congo,0,0
+Democratic Republic of the Congo,0,0
+Bhutan,90.0403,27.5367
+Ukraine,32.1409,49.7247
+Belarus,28.4177,53.8219
+Namibia,17.1082,-20.5753
+South Africa,23.6657,-29.7088
+France,-63.0494,18.0813
+Netherlands,-63.0701,18.0409
+Oman,57.3366,22.1204
+Uzbekistan,64.0054,41.6936
+Kazakhstan,68.6855,49.0541
+Tajikistan,72.5873,38.1998
+Lithuania,24.0899,55.1037
+Brazil,-49.5595,-12.0987
+Uruguay,-55.9669,-32.9611
+Mongolia,104.1504,45.9975
+Russia,44.6865,58.2494
+Czechia,15.3776,49.8824
+Germany,9.6783,50.9617
+Estonia,25.8671,58.7249
+Latvia,25.4587,57.0669
+Norway,0,0
+Sweden,19.0171,65.8592
+Finland,27.2764,63.2524
+Vietnam,105.3873,21.7154
+Cambodia,104.5049,12.6476
+Luxembourg,6.0776,49.7337
+United Arab Emirates,54.5473,23.4663
+Belgium,4.8004,50.7854
+Georgia,43.7357,41.8701
+North Macedonia,21.5558,41.5582
+Albania,20.1138,40.6549
+Azerbaijan,47.211,40.4024
+Kosovo,0,0
+Turkey,34.5083,39.3454
+Spain,-3.4647,40.091
+Laos,102.5339,19.4318
+Kyrgyzstan,74.5326,41.6685
+Armenia,44.8006,40.4591
+Denmark,9.0182,55.967
+Libya,18.011,26.6389
+Tunisia,9.0079,33.6873
+Romania,24.9726,45.7332
+Hungary,19.4479,47.0868
+Slovakia,19.0499,48.734
+Poland,19.4905,51.9903
+Ireland,-7.7986,53.0787
+United Kingdom,0,0
+Greece,21.7257,39.4928
+Zambia,26.3953,-14.6608
+Sierra Leone,-11.7637,8.6174
+Guinea,-10.0164,10.6185
+Liberia,-9.4604,6.4472
+Central African Republic,20.9069,6.9897
+Sudan,29.2607,16.3307
+Djibouti,42.4988,11.9763
+Eritrea,38.2856,15.7874
+Austria,14.1305,47.5189
+Iraq,43.2618,33.094
+Italy,11.0769,44.7325
+Switzerland,7.464,46.7191
+Iran,0,0
+Netherlands,0,0
+Liechtenstein,9.5594,47.1114
+Ivory Coast,-5.5686,7.4914
+Republic of Serbia,20.788,44.1899
+Mali,-2.0385,18.6927
+Senegal,-14.7786,15.1381
+Nigeria,7.5032,9.4398
+Benin,2.352,10.3248
+Angola,17.9842,-12.1828
+Croatia,16.3724,45.8058
+Slovenia,14.9153,46.0608
+Qatar,51.1435,25.2374
+Saudi Arabia,44.6996,23.8069
+Botswana,24.1792,-22.1026
+Zimbabwe,29.9254,-18.9116
+Pakistan,68.5456,29.3284
+Bulgaria,25.1571,42.5088
+Thailand,101.0732,15.4597
+San Marino,12.4412,43.9339
+Haiti,-72.2241,19.2638
+Dominican Republic,-70.654,19.1041
+Chad,18.645,15.143
+Kuwait,47.314,29.4136
+El Salvador,-88.8901,13.6854
+Guatemala,-90.4971,14.9821
+East Timor,125.8547,-8.8037
+Brunei,114.5519,4.4483
+Monaco,7.3983,43.7397
+Algeria,2.8082,27.3974
+Mozambique,37.8379,-13.9432
+eSwatini,31.4673,-26.5337
+Burundi,29.9171,-3.3328
+Rwanda,30.1039,-1.8972
+Myanmar,95.8045,21.5739
+Bangladesh,89.685,24.215
+Andorra,1.5394,42.5476
+Afghanistan,66.4966,34.1643
+Montenegro,19.1437,42.8031
+Bosnia and Herzegovina,18.0684,44.0911
+Uganda,32.9486,1.9726
+Cuba,0,0
+Cuba,-77.9759,21.334
+Honduras,-86.8876,14.7948
+Ecuador,-78.1884,-1.2591
+Colombia,-73.1743,3.3731
+Paraguay,-60.1464,-21.6745
+Brazilian Island,-57.623,-30.1876
+Portugal,-8.2718,39.6067
+Moldova,28.4879,47.435
+Turkmenistan,58.6766,39.8552
+Jordan,36.376,30.805
+Nepal,83.6399,28.2979
+Lesotho,28.2466,-29.4802
+Cameroon,12.4735,4.585
+Gabon,11.8359,-0.4377
+Niger,9.5044,17.4462
+Burkina Faso,-1.3639,12.673
+Togo,1.0581,8.8072
+Ghana,-1.0369,7.7176
+Guinea-Bissau,-14.5241,12.1637
+United Kingdom,-5.3467,36.1294
+United States of America,-97.4826,39.5385
+Canada,-101.9107,60.3243
+Mexico,-102.2894,23.92
+Belize,-88.713,17.2021
+Panama,-80.3521,8.722
+Venezuela,0,0
+Papua New Guinea,143.9102,-5.6953
+Egypt,0,0
+Yemen,0,0
+Mauritania,-9.7403,19.5871
 Equatorial Guinea,8.9902,2.333
-Gambia,,
-China,,
-Vatican,12.453418,41.903323
-Northern Cyprus,,
-Cyprus No Mans Area,33.288134,35.140713
-Kashmir,77.129553,35.340606
-Kazakhstan,63.383897,45.978332
-United Kingdom,32.979025,34.60083
-Southern Patagonian Ice Field,-73.31378,-49.511034
-Bir Tawil,33.673428,21.860442
-Antarctica,35.885455,-79.843222
-Australia,134.04972,-24.129522
-Denmark,-39.335251,74.319387
-Fiji,177.975427,-17.826099
+Gambia,0,0
+China,0,0
+Vatican,12.4534,41.9033
+Northern Cyprus,0,0
+Cyprus No Mans Area,33.2881,35.1407
+Kashmir,77.1296,35.3406
+Kazakhstan,63.3839,45.9783
+United Kingdom,32.979,34.6008
+Southern Patagonian Ice Field,-73.3138,-49.511
+Bir Tawil,33.6734,21.8604
+Antarctica,35.8855,-79.8432
+Australia,134.0497,-24.1295
+Denmark,-39.3353,74.3194
+Fiji,177.9754,-17.8261
 New Zealand,172.787,-39.759
-France,165.084004,-21.064697
-Madagascar,46.704241,-18.628288
+France,165.084,-21.0647
+Madagascar,46.7042,-18.6283
 Philippines,122.465,11.198
-Sri Lanka,80.704823,7.581097
-Netherlands,-68.920578,12.145039
-Netherlands,-69.972795,12.5174
-The Bahamas,,
-United Kingdom,-71.752704,21.81663
-Taiwan,120.868204,23.652408
-Japan,138.44217,36.142538
-France,-56.332352,47.040344
-Iceland,-18.673711,64.779286
-United Kingdom,,
-France,-149.46157,-17.628081
-France,69.122136,-49.303721
-Seychelles,55.480175,-4.676659
-Kiribati,-157.384577,1.820437
-Marshall Islands,171.193609,7.082568
+Sri Lanka,80.7048,7.5811
+Netherlands,-68.9206,12.145
+Netherlands,-69.9728,12.5174
+The Bahamas,0,0
+United Kingdom,-71.7527,21.8166
+Taiwan,120.8682,23.6524
+Japan,138.4422,36.1425
+France,-56.3324,47.0403
+Iceland,-18.6737,64.7793
+United Kingdom,0,0
+France,-149.4616,-17.6281
+France,69.1221,-49.3037
+Seychelles,55.4802,-4.6767
+Kiribati,-157.3846,1.8204
+Marshall Islands,171.1936,7.0826
 Trinidad and Tobago,-60.9184,10.9989
-Grenada,-61.680461,12.113156
+Grenada,-61.6805,12.1132
 Saint Vincent and the Grenadines,-61.3359,13.0879
-Barbados,-59.568966,13.163709
-Saint Lucia,-60.980094,13.892371
-Dominica,-61.344958,15.458829
-United States of America,166.644535,19.285663
-United Kingdom,-62.188252,16.73717
-Antigua and Barbuda,-61.790612,17.352249
-Saint Kitts and Nevis,-62.757975,17.336558
-United States of America,-64.779172,17.746706
-France,-62.833193,17.901987
-United States of America,-66.481065,18.234668
-United Kingdom,-63.026361,18.242979
-United Kingdom,-64.63661,18.426606
-Jamaica,-77.318767,18.137124
-United Kingdom,-81.24055,19.319862
-United Kingdom,-64.763573,32.296592
-Australia,73.50521,-53.103462
-United Kingdom,,
-Mauritius,57.565848,-20.299506
-Comoros,43.318094,-11.727683
+Barbados,-59.569,13.1637
+Saint Lucia,-60.9801,13.8924
+Dominica,-61.345,15.4588
+United States of America,166.6445,19.2857
+United Kingdom,-62.1883,16.7372
+Antigua and Barbuda,-61.7906,17.3522
+Saint Kitts and Nevis,-62.758,17.3366
+United States of America,-64.7792,17.7467
+France,-62.8332,17.902
+United States of America,-66.4811,18.2347
+United Kingdom,-63.0264,18.243
+United Kingdom,-64.6366,18.4266
+Jamaica,-77.3188,18.1371
+United Kingdom,-81.2406,19.3199
+United Kingdom,-64.7636,32.2966
+Australia,73.5052,-53.1035
+United Kingdom,0,0
+Mauritius,57.5658,-20.2995
+Comoros,43.3181,-11.7277
 São Tomé and Principe,7.021,0.9709
-Cabo Verde,-23.639434,15.074761
-Malta,14.433005,35.892886
-United Kingdom,-2.090146,49.220808
-United Kingdom,-2.561736,49.463533
-United Kingdom,-4.530069,54.220833
-Finland,19.869671,60.156467
-Denmark,-7.058429,62.185604
-Australia,105.67259,-10.490789
-United Kingdom,71.348349,-6.190826
-Singapore,103.816925,1.366587
-Australia,167.954531,-29.033042
-New Zealand,-159.785675,-21.215993
-Tonga,-175.163014,-21.210026
-France,-178.137436,-14.286415
-Samoa,-172.438241,-13.639139
-Solomon Islands,159.170468,-8.029548
-Tuvalu,179.209587,-8.513717
-Maldives,73.507554,4.174441
-Nauru,166.932644,-0.520261
-Federated States of Micronesia,,
-United Kingdom,-31.063179,-55.683402
-United Kingdom,-58.738602,-51.608913
-Vanuatu,166.908762,-15.37153
-New Zealand,-169.862565,-19.045956
-United States of America,-170.747153,-14.32671
-Palau,134.580157,7.518252
-United States of America,144.703614,13.354173
-United States of America,145.734397,15.188188
-Bahrain,50.554816,26.055972
-Australia,154.390595,-21.029311
-Spratly Islands,,
-France,-109.22045,10.297324
-China,,
-Australia,123.586368,-12.432571
-Bajo Nuevo Bank (Petrel Is.),,
-Serranilla Bank,,
-Scarborough Reef,117.753812,15.152039
+Cabo Verde,-23.6394,15.0748
+Malta,14.433,35.8929
+United Kingdom,-2.0901,49.2208
+United Kingdom,-2.5617,49.4635
+United Kingdom,-4.5301,54.2208
+Finland,19.8697,60.1565
+Denmark,-7.0584,62.1856
+Australia,105.6726,-10.4908
+United Kingdom,71.3483,-6.1908
+Singapore,103.8169,1.3666
+Australia,167.9545,-29.033
+New Zealand,-159.7857,-21.216
+Tonga,-175.163,-21.21
+France,-178.1374,-14.2864
+Samoa,-172.4382,-13.6391
+Solomon Islands,159.1705,-8.0295
+Tuvalu,179.2096,-8.5137
+Maldives,73.5076,4.1744
+Nauru,166.9326,-0.5203
+Federated States of Micronesia,0,0
+United Kingdom,-31.0632,-55.6834
+United Kingdom,-58.7386,-51.6089
+Vanuatu,166.9088,-15.3715
+New Zealand,-169.8626,-19.046
+United States of America,-170.7472,-14.3267
+Palau,134.5802,7.5183
+United States of America,144.7036,13.3542
+United States of America,145.7344,15.1882
+Bahrain,50.5548,26.056
+Australia,154.3906,-21.0293
+Spratly Islands,0,0
+France,-109.2205,10.2973
+China,0,0
+Australia,123.5864,-12.4326
+Bajo Nuevo Bank (Petrel Is.),0,0
+Serranilla Bank,0,0
+Scarborough Reef,117.7538,15.152
