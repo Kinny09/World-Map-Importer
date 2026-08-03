@@ -8,10 +8,10 @@ script = ExtResource("1_4h4p5")
 
 [node name="MapSaver" type="Node" parent="." unique_id=362540935]
 
-[node name="OSMImporter" type="Node" parent="." unique_id=40398903]
+[node name="OSMImporterAndSaver" type="Node" parent="." unique_id=40398903]
 script = ExtResource("1_kh4pn")
 
-[node name="HTTPRequest" type="HTTPRequest" parent="OSMImporter" unique_id=991823131]
+[node name="HTTPRequest" type="HTTPRequest" parent="OSMImporterAndSaver" unique_id=991823131]
 
 [node name="WorldMap" type="Node2D" parent="." unique_id=820642387]
 unique_name_in_owner = true

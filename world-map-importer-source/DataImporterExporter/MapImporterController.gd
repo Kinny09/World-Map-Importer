@@ -32,8 +32,8 @@ const SAVE_LOCATION = "res://WorldMap.tres"
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # Node References
 # ---------------------------------------------------------------------------------------------------------------------------------------
-@onready var OSMImporter = $OSMImporter
-@onready var SimImporterExporter = $MapSaver
+#@onready var OSMImporterAndSaver = $OSMImporterAndSaver
+#@onready var SimImporterExporter = $MapSaver
 
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # Signalling

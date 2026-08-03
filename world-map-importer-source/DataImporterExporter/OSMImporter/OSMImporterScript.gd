@@ -64,8 +64,18 @@ func import_osm_file(BboxCoordinatesForImport: String, BboxCoordinatesForScale: 
 	# Converting the data to the sim format
 	WorldMapConstructor.construct_map(RequestorOutput)
 	
-	# Sending the DATA_IMPORTER_FINISHED signal
-	#DataImporterExporter.DATA_IMPORTER_FINISHED.emit(SimulationNetworkStructure)
+	# Saving the world map
+	var sceneToSave = PackedScene.new()
+	var worldMap = %WorldMap
+	set_owner_recursive(worldMap, worldMap)
+	sceneToSave.pack(worldMap)
+	ResourceSaver.save(sceneToSave, "res://WorldMap.tscn")
+	
+## 	
+func set_owner_recursive(ownerNode, nodeToSetOwnershipOf):    
+	for childNode in nodeToSetOwnershipOf.get_children():
+		childNode.set_owner(ownerNode)
+		set_owner_recursive(ownerNode, childNode)
 	
 # -----------------------------------------------------------------------------------------------------------------------------------------------------
 # A few functions for keeping track of the progress and checking if the HTTP request worked
