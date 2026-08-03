@@ -103,6 +103,7 @@ func construct_map(input: Dictionary):
 			landmassFiller.points = arrayOfVectors
 			landmassFiller.default_color = MapColours["land"]
 			landmassFiller.z_index = ItemLayers["land"]
+			landmassFiller.width = 0.02
 			LandmassVisualiser.add_child(landmassFiller)
 		
 		# Constructing the landmasses, if their ways

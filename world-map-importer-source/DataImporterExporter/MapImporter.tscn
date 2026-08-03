@@ -19,3 +19,7 @@ unique_name_in_owner = true
 [node name="BuiltUpAreas" type="Node2D" parent="WorldMap" unique_id=1231840054]
 
 [node name="PlaceLabels" type="Node2D" parent="WorldMap" unique_id=1239347142]
+
+[node name="Line2D" type="Line2D" parent="WorldMap" unique_id=1969723469]
+points = PackedVector2Array(217, 158, 266, 172)
+width = 0.5
