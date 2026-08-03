@@ -6,8 +6,6 @@
 [node name="MapImporter" type="Node" unique_id=1305667917]
 script = ExtResource("1_4h4p5")
 
-[node name="MapSaver" type="Node" parent="." unique_id=362540935]
-
 [node name="OSMImporterAndSaver" type="Node" parent="." unique_id=40398903]
 script = ExtResource("1_kh4pn")
 

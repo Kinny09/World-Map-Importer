@@ -18,14 +18,14 @@ var RequestorOutput: Dictionary
 # Node References
 # ---------------------------------------------------------------------------------------------------------------------------------------
 @onready var HTTPRequestNode = $HTTPRequest
-@onready var DataImporterExporter = $".."
+@onready var MapImporter = $".."
 
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # CODE
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # Connecting the signals
 func _ready() -> void:
-	DataImporterExporter.IMPORT_OSM_FILE.connect(import_osm_file)
+	MapImporter.IMPORT_OSM_FILE.connect(import_osm_file)
 	
 ## Constructs the API query, calls the HTTP request, converts the data and then sends a DATA_IMPORTER_FINISHED signal
 func import_osm_file(BboxCoordinatesForImport: String, BboxCoordinatesForScale: Vector4, ScreenCoordinates: Vector4):	
