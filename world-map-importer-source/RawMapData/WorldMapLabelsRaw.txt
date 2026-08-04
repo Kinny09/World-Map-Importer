@@ -1,4 +1,3 @@
-x,y,NAME
 -57.8361,-34.4698,Colonia del Sacramento
 -56.901,-33.544,Trinidad
 -58.304,-33.139,Fray Bentos
