@@ -46,9 +46,9 @@ func _ready() -> void:
 	var landmassesFile = FileAccess.open(LandmassFilePath, FileAccess.READ)
 	var previousShapeID = 0
 	var previousPartID = 0
-	var polygonPoints: PackedVector2Array = []
 
 	# Getting the landmass data from the file
+	var polygonPoints: PackedVector2Array = []
 	while !landmassesFile.eof_reached():
 		var lineToRead = landmassesFile.get_line()
 		var slicedLine = lineToRead.split(",")
@@ -56,21 +56,27 @@ func _ready() -> void:
 		var currentPartID = slicedLine[1].to_int()
 		
 		if currentShapeID != previousShapeID || currentPartID != previousPartID:
-			PolygonsToDraw.append(polygonPoints)
-			polygonPoints = []
+			var newPolygon: ScalablePolygon = ScalablePolygon.new()
+			newPolygon.set_polygon(polygonPoints)
+			newPolygon.color = MapColours["Landmass"]
+			newPolygon.z_index = MapLayers["Landmass"]
+			newPolygon.split_polygon_up()
+			%WorldMapVisualiser.get_node("Landmass").add_child(newPolygon)
+			polygonPoints.clear()
 			var x = slicedLine[2].to_float()
 			var y = slicedLine[3].to_float()
 			polygonPoints.append(Vector2(x, -y) * MapScale)
-		
-		else:
+			
+		elif previousPartID == currentPartID:
 			var x = slicedLine[2].to_float()
 			var y = slicedLine[3].to_float()
-			polygonPoints.append(Vector2(x, -y) * MapScale)
+			polygonPoints.append(Vector2(x, -y) * MapScale )
 		
 		previousShapeID = currentShapeID
 		previousPartID = currentPartID
-	
-	DrawPolygons("Landmass")
+		
+		previousShapeID = currentShapeID
+		previousPartID = currentPartID
 	
 	# ----------------------------------------- Sorting out the country borders -----------------------------------------
 	var borderPoints: Array[Vector2] = []
@@ -110,21 +116,25 @@ func _ready() -> void:
 		var slicedLine = lineToRead.split(",")
 		var currentShapeID = slicedLine[0].to_int()
 		
-		if previousShapeID != currentShapeID:
-			PolygonsToDraw.append(polygonPoints)
-			polygonPoints = []
+		if currentShapeID != previousShapeID:
+			var newPolygon: ScalablePolygon = ScalablePolygon.new(true, Vector2(17, 30))
+			newPolygon.set_polygon(polygonPoints)
+			newPolygon.color = MapColours["BuiltUpArea"]
+			newPolygon.z_index = MapLayers["BuiltUpArea"]
+			newPolygon.split_polygon_up()
+			%WorldMapVisualiser.get_node("BuiltUpArea").add_child(newPolygon)
+			polygonPoints.clear()
 			var x = slicedLine[1].to_float()
 			var y = slicedLine[2].to_float()
 			polygonPoints.append(Vector2(x, -y) * MapScale)
 			
-		else:
+		elif previousShapeID == currentShapeID:
 			var x = slicedLine[1].to_float()
 			var y = slicedLine[2].to_float()
-			polygonPoints.append(Vector2(x, -y) * MapScale)
+			polygonPoints.append(Vector2(x, -y) * MapScale )
 			
 		previousShapeID = currentShapeID
-			
-	DrawPolygons("BuiltUpArea")
+		
 	
 	# ----------------------------------------- Sorting out the settlement labels -----------------------------------------
 	var settlementLabelFile = FileAccess.open(SettlementLabelFilePath, FileAccess.READ)
@@ -138,7 +148,8 @@ func _ready() -> void:
 		var x = slicedLine[0].to_float()
 		var y = slicedLine[1].to_float()
 		
-		var newLabel: Label = Label.new()
+		var newLabel: ScalableLabel = ScalableLabel.new()
+		newLabel.ZoomLevelVisibleRange = Vector2i(17, 30)
 		newLabel.set_anchors_preset(Control.PRESET_CENTER)
 		newLabel.position = Vector2(x, -y)  * MapScale
 		newLabel.text = slicedLine[2]
@@ -158,29 +169,26 @@ func _ready() -> void:
 		var x = slicedLine[1].to_float()
 		var y = slicedLine[2].to_float()
 		
-		var newLabel: Label = Label.new()
+		var newLabel: ScalableLabel = ScalableLabel.new()
 		newLabel.set_anchors_preset(Control.PRESET_CENTER)
 		newLabel.grow_vertical = Control.GROW_DIRECTION_BOTH
 		newLabel.grow_horizontal = Control.GROW_DIRECTION_BOTH
 		newLabel.position = Vector2(x, -y)  * MapScale
 		newLabel.text = slicedLine[0]
 		newLabel.z_index = MapLayers["SettlementLabels"]
-		newLabel.add_theme_font_size_override("font_size", LabelSizes["country"])
 		%WorldMapVisualiser.get_node("CountryLabels").add_child(newLabel)
 		
-		
-		
-## Constructs all the polygons currently in PolygonsToDraw before emptying it
-func DrawPolygons(typeOfItemToDraw: String):
-	for polygonGeometry in PolygonsToDraw:
-		var slicedPolygonGeometry = Geometry2D.merge_polygons(polygonGeometry, PackedVector2Array([]))
-		for polygonSliceGeometry in slicedPolygonGeometry:
-			var newPolygon = Polygon2D.new()
-			newPolygon.set_polygon(polygonSliceGeometry)
-			newPolygon.color = MapColours[typeOfItemToDraw]
-			newPolygon.z_index = MapLayers[typeOfItemToDraw]
-			%WorldMapVisualiser.get_node(typeOfItemToDraw).add_child(newPolygon)
-	PolygonsToDraw = []
+### Constructs all the polygons currently in PolygonsToDraw before emptying it
+#func DrawPolygons(typeOfItemToDraw: String):
+	#for polygonGeometry in PolygonsToDraw:
+		#var slicedPolygonGeometry = Geometry2D.merge_polygons(polygonGeometry, PackedVector2Array([]))
+		#for polygonSliceGeometry in slicedPolygonGeometry:
+			#var newPolygon: ScalablePolygon = ScalablePolygon.new()
+			#newPolygon.set_polygon(polygonSliceGeometry)
+			#newPolygon.color = MapColours[typeOfItemToDraw]
+			#newPolygon.z_index = MapLayers[typeOfItemToDraw]
+			#%WorldMapVisualiser.get_node(typeOfItemToDraw).add_child(newPolygon)
+	#PolygonsToDraw = []
 	
 func scale_xy_coordinates_to_screen(CoordinatesToScale: Vector2) -> Vector2:
 	var scaledCoordinates: Vector2 = Vector2.ZERO

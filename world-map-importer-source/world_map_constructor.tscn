@@ -15,16 +15,10 @@ oversampling_with_scale = 2
 [node name="CountryBorders" type="Node2D" parent="WorldMapVisualiser" unique_id=1953117168]
 
 [node name="BuiltUpArea" type="Node2D" parent="WorldMapVisualiser" unique_id=1631909509]
-visible = false
 
 [node name="SettlementLabels" type="Node2D" parent="WorldMapVisualiser" unique_id=993196103]
-visible = false
 
 [node name="CountryLabels" type="Node2D" parent="WorldMapVisualiser" unique_id=1761022237]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=849854389]
 script = ExtResource("2_a7mx8")
-
-[node name="Label" type="Label" parent="." unique_id=1087292910]
-offset_right = 40.0
-offset_bottom = 23.0
