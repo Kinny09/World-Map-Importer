@@ -32,6 +32,11 @@ func _ready() -> void:
 	# Setting the default zoom on camera initalization
 	self.zoom = Vector2(0.25, 0.25) * ZoomLevel
 	
+	self.limit_left = -3500
+	self.limit_right = 3500
+	self.limit_top = -1600
+	self.limit_bottom = 1600
+	
 ## Runs all the camera controls every frame
 func _process(delta: float) -> void:
 	zoom_camera(delta)
