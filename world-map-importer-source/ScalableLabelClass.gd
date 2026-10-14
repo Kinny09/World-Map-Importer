@@ -45,9 +45,11 @@ func _ready() -> void:
 ## Updates the label's visiblity and scale depending on the zoom level
 func update_label():
 	ZoomLevel = Camera["ZoomLevel"]
+	var adjustedScale: float = float(BaseScale) / float(ZoomLevel)
 	if ZoomLevel >= ZoomLevelVisibleRange[0] && ZoomLevel <= ZoomLevelVisibleRange[1]:
 		self.self_modulate.a = 1
-		self.add_theme_font_size_override("font_size", 60 / ZoomLevel)
+		self.add_theme_font_size_override("font_size", adjustedScale)
+		self.add_theme_constant_override("outline_size", adjustedScale)
 		OnScreenNotifier.rect = Rect2(0,0,self.size.x, self.size.y)
 	else:
 		self.self_modulate.a = 0

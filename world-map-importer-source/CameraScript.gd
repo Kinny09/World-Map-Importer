@@ -25,7 +25,6 @@ func _input(inputEvent: InputEvent) -> void:
 		if inputEvent.button_index == MOUSE_BUTTON_WHEEL_DOWN && ZoomLevel > 1:
 			ZoomLevel -= 1
 		ZOOM_LEVEL_CHANGED.emit()
-		print(ZoomLevel)
 		self.zoom = Vector2(ZoomLevel * 0.25, ZoomLevel * 0.25)
 		self.zoom = self.zoom.clamp(Vector2(0.25, 0.25), Vector2(20.0, 20.0))
 		

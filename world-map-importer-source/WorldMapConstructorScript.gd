@@ -28,7 +28,8 @@ var MapColours: Dictionary[String, Color] = {
 	"Sea": Color.from_rgba8(144, 218, 238),
 	"Landmass": Color.from_rgba8(69, 145, 106, 255),
 	"CountryBorders": Color.from_rgba8(18, 48, 33, 255),
-	"BuiltUpArea": Color.from_rgba8(246, 245, 245, 255)
+	"BuiltUpArea": Color.from_rgba8(246, 245, 245, 255),
+	"LabelColours": Color.from_rgba8(0, 0, 0, 255)
 }
 const ScreenSize: Vector4 = Vector4(171, 134, -171, -134)
 const MapScale: int = 20
@@ -155,6 +156,7 @@ func _ready() -> void:
 		newLabel.text = slicedLine[2]
 		newLabel.z_index = MapLayers["SettlementLabels"]
 		newLabel.add_theme_font_size_override("font_size", LabelSizes["settlement"])
+		#newLabel.add_theme_constant_override("outline_size", 3)
 		%WorldMapVisualiser.get_node("SettlementLabels").add_child(newLabel)
 		
 	# ----------------------------------------- Sorting out the country labels -----------------------------------------
@@ -176,6 +178,7 @@ func _ready() -> void:
 		newLabel.position = Vector2(x, -y)  * MapScale
 		newLabel.text = slicedLine[0]
 		newLabel.z_index = MapLayers["SettlementLabels"]
+		#newLabel.add_theme_constant_override("outline_size", 3)
 		%WorldMapVisualiser.get_node("CountryLabels").add_child(newLabel)
 		
 ### Constructs all the polygons currently in PolygonsToDraw before emptying it
