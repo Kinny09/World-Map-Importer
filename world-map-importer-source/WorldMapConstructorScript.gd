@@ -198,5 +198,6 @@ func scale_xy_coordinates_to_screen(CoordinatesToScale: Vector2) -> Vector2:
 	scaledCoordinates.x = ScreenSize[0] + (ScreenSize[2] - ScreenSize[0]) * CoordinatesToScale.x
 	scaledCoordinates.y = ScreenSize[1] + (ScreenSize[3]  - ScreenSize[1]) * CoordinatesToScale.y
 	
+	
 	return scaledCoordinates
 	

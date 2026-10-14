@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c3sfaj1410kko"]
 
 [ext_resource type="Script" uid="uid://3drcevm0cewr" path="res://WorldMapConstructorScript.gd" id="1_aj7nq"]
-[ext_resource type="Script" uid="uid://bfvba6suu5t45" path="res://CameraScript.gd" id="2_a7mx8"]
+[ext_resource type="Script" uid="uid://bvtcnvo3j7rxo" path="res://ManipulatableCameraClass.gd" id="2_a7mx8"]
 
 [node name="WorldMapConstructor" type="Node" unique_id=1063491476]
 script = ExtResource("1_aj7nq")
@@ -20,5 +20,5 @@ oversampling_with_scale = 2
 
 [node name="CountryLabels" type="Node2D" parent="WorldMapVisualiser" unique_id=1761022237]
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=849854389]
+[node name="Camera2D" type="Camera2D" parent="WorldMapVisualiser" unique_id=1948647982]
 script = ExtResource("2_a7mx8")
