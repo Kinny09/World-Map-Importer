@@ -13,6 +13,12 @@ class_name ManipulatableCamera extends Camera2D
 @export var ZoomSlerpSpeed: float = 10;
 @export var PanSpeed: float = 1000;
 @export var MaxZoom: int = 30
+@export var CameraPanLimits: Dictionary[String, int] = {
+	LeftLimit = 0,
+	RightLimit = 0,
+	TopLimit = 0,
+	BottomLimit = 0,
+}
 
 # Member Variables
 var ZoomLevel: int = 1
@@ -32,16 +38,12 @@ func _ready() -> void:
 	# Setting the default zoom on camera initalization
 	self.zoom = Vector2(0.25, 0.25) * ZoomLevel
 	
-	self.limit_left = -3500
-	self.limit_right = 3500
-	self.limit_top = -1600
-	self.limit_bottom = 1600
-	
 ## Runs all the camera controls every frame
 func _process(delta: float) -> void:
 	zoom_camera(delta)
 	pan_camera(delta)
 	click_and_drag_camera()
+	clamp_camera_position()
 	
 ## Handles the zooming of the camera
 func zoom_camera(delta):
@@ -70,8 +72,7 @@ func pan_camera(delta):
 	if Input.is_action_pressed("CAMERA_MOVE_DOWN"):
 		moveAmount.y += 1
 		
-	moveAmount = moveAmount.normalized()
-	self.position += moveAmount * delta * PanSpeed * (1/zoom.x)
+	self.position += moveAmount.normalized() * delta * PanSpeed * (1/zoom.x)
 
 ## Handles the middle mouse click based panning of the camera
 func click_and_drag_camera():
@@ -86,3 +87,9 @@ func click_and_drag_camera():
 	if IsPanning:
 		var moveVector = get_viewport().get_mouse_position() - PanStartMousePosition
 		self.position = PanStartCameraPosition - moveVector * 1/self.zoom.x
+		
+func clamp_camera_position():
+	var cameraSizehalved: Vector2 = (get_viewport().get_visible_rect().size / self.zoom) / 2
+
+	self.position.x = clamp(self.position.x, CameraPanLimits["LeftLimit"] + cameraSizehalved.x, CameraPanLimits["RightLimit"] - cameraSizehalved.x)
+	self.position.y = clamp(self.position.y, CameraPanLimits["TopLimit"] + cameraSizehalved.y, CameraPanLimits["BottomLimit"] - cameraSizehalved.y)

@@ -21,4 +21,11 @@ oversampling_with_scale = 2
 [node name="CountryLabels" type="Node2D" parent="WorldMapVisualiser" unique_id=1761022237]
 
 [node name="Camera2D" type="Camera2D" parent="WorldMapVisualiser" unique_id=1948647982]
+limit_enabled = false
 script = ExtResource("2_a7mx8")
+CameraPanLimits = Dictionary[String, int]({
+"BottomLimit": 1600,
+"LeftLimit": -3500,
+"RightLimit": 3500,
+"TopLimit": -1600
+})
