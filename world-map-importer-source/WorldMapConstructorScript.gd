@@ -67,12 +67,33 @@ func _ready() -> void:
 			var x = slicedLine[2].to_float()
 			var y = slicedLine[3].to_float()
 			polygonPoints.append(Vector2(x, -y) * MapScale)
-			
+			#var trianglesForMesh = Geometry2D.triangulate_polygon(polygonPoints)
+			#var numberOfTriangles = trianglesForMesh.size()/3
+			#
+			#var arrayOfTriangles: PackedVector2Array
+			#var arrayOfTrianglesMesh = []
+			#arrayOfTrianglesMesh.resize(Mesh.ARRAY_MAX)
+			#for triangleCount in numberOfTriangles:
+				#var triangleStartIndex = triangleCount * 3
+				#var trianglePoint1 = polygonPoints[trianglesForMesh[triangleStartIndex]]
+				#var trianglePoint2 = polygonPoints[trianglesForMesh[triangleStartIndex + 1]]
+				#var trianglePoint3 = polygonPoints[trianglesForMesh[triangleStartIndex + 2]]
+				#arrayOfTriangles.append(trianglePoint1)
+				#arrayOfTriangles.append(trianglePoint2)
+				#arrayOfTriangles.append(trianglePoint3)
+			#arrayOfTrianglesMesh[Mesh.ARRAY_VERTEX] = arrayOfTriangles
+			#
+			#var arrayMesh: ArrayMesh = ArrayMesh.new()
+			#arrayMesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLE_STRIP, arrayOfTrianglesMesh)
+			#var newMesh = MeshInstance2D.new()
+			#newMesh.mesh = arrayMesh
+			#self.add_child(newMesh)
+				
 		elif previousPartID == currentPartID:
 			var x = slicedLine[2].to_float()
 			var y = slicedLine[3].to_float()
 			polygonPoints.append(Vector2(x, -y) * MapScale )
-		
+			
 		previousShapeID = currentShapeID
 		previousPartID = currentPartID
 		
