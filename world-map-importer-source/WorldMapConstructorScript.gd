@@ -156,7 +156,6 @@ func _ready() -> void:
 		newLabel.text = slicedLine[2]
 		newLabel.z_index = MapLayers["SettlementLabels"]
 		newLabel.add_theme_font_size_override("font_size", LabelSizes["settlement"])
-		#newLabel.add_theme_constant_override("outline_size", 3)
 		%WorldMapVisualiser.get_node("SettlementLabels").add_child(newLabel)
 		
 	# ----------------------------------------- Sorting out the country labels -----------------------------------------
@@ -178,8 +177,18 @@ func _ready() -> void:
 		newLabel.position = Vector2(x, -y)  * MapScale
 		newLabel.text = slicedLine[0]
 		newLabel.z_index = MapLayers["SettlementLabels"]
-		#newLabel.add_theme_constant_override("outline_size", 3)
 		%WorldMapVisualiser.get_node("CountryLabels").add_child(newLabel)
+		
+	# ----------------------------------------- Saving the world map -----------------------------------------
+	#var resourceToSave: PackedScene = PackedScene.new()
+	#set_ownership(%WorldMapVisualiser, %WorldMapVisualiser)
+	#resourceToSave.pack(%WorldMapVisualiser)
+	#ResourceSaver.save(resourceToSave, "res://Output/SavedWorldMapVisualiser.scn")
+	
+func set_ownership(p_owner, node):    
+	for c in node.get_children():    
+		c.owner = p_owner
+		set_ownership(p_owner, c)
 		
 ### Constructs all the polygons currently in PolygonsToDraw before emptying it
 #func DrawPolygons(typeOfItemToDraw: String):
@@ -197,7 +206,6 @@ func scale_xy_coordinates_to_screen(CoordinatesToScale: Vector2) -> Vector2:
 	var scaledCoordinates: Vector2 = Vector2.ZERO
 	scaledCoordinates.x = ScreenSize[0] + (ScreenSize[2] - ScreenSize[0]) * CoordinatesToScale.x
 	scaledCoordinates.y = ScreenSize[1] + (ScreenSize[3]  - ScreenSize[1]) * CoordinatesToScale.y
-	
-	
+
 	return scaledCoordinates
 	

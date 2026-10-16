@@ -1,10 +1,11 @@
 [gd_scene format=3 uid="uid://c3sfaj1410kko"]
 
-[ext_resource type="Script" uid="uid://3drcevm0cewr" path="res://WorldMapConstructorScript.gd" id="1_aj7nq"]
+[ext_resource type="Script" uid="uid://3drcevm0cewr" path="res://WorldMapConstructorScript.gd" id="1_gksvb"]
 [ext_resource type="Script" uid="uid://bvtcnvo3j7rxo" path="res://ManipulatableCameraClass.gd" id="2_a7mx8"]
+[ext_resource type="Script" uid="uid://cysgpba20s1dy" path="res://MeshTestScript.gd" id="3_gksvb"]
 
 [node name="WorldMapConstructor" type="Node" unique_id=1063491476]
-script = ExtResource("1_aj7nq")
+script = ExtResource("1_gksvb")
 
 [node name="WorldMapVisualiser" type="Node2D" parent="." unique_id=318325445]
 unique_name_in_owner = true
@@ -29,3 +30,10 @@ CameraPanLimits = Dictionary[String, int]({
 "RightLimit": 3500,
 "TopLimit": -1600
 })
+
+[node name="MeshTest" type="Node2D" parent="." unique_id=1200387540]
+script = ExtResource("3_gksvb")
+
+[node name="Polygon2D" type="Polygon2D" parent="." unique_id=309027755]
+position = Vector2(-67, -53)
+polygon = PackedVector2Array(-16, -20, 15, -10, 9, 18, -37, -1, -17, -6)
