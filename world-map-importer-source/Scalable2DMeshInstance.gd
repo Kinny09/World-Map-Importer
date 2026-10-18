@@ -54,12 +54,15 @@ func _init(_listOfPointsForMesh: PackedVector2Array, _meshColour: Color = Color.
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # CODE
 # ---------------------------------------------------------------------------------------------------------------------------------------
+## Changes the mesh colour
 func change_mesh_colour(newMeshColour: Color):
 	self.modulate = newMeshColour
 
+## Changes the z-index of the mesh
 func change_z_index(newZIndex: int):
 	self.z_index = newZIndex
-	
+
+## Adds an outline around the mesh
 func add_outline_to_mesh(outlineColour: Color = Color.from_rgba8(255, 255, 255, 255), outlineWidth: float = 1.0):
 	if ListOfPointsForMesh.size() >= 2:
 		OutlinePoints = ListOfPointsForMesh.duplicate()
