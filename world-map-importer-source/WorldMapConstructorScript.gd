@@ -60,8 +60,8 @@ func _ready() -> void:
 
 			else:
 				var newMesh: ScalableMeshInstance2D = ScalableMeshInstance2D.new(polygonPoints, MapColours["Landmass"], MapLayers["Landmass"])
-				newMesh.add_outline_to_mesh(MapColours["CountryBorders"], 3)
-				self.add_child(newMesh)
+				newMesh.add_outline_to_mesh(MapColours["CountryBorders"], 0.5)
+				%WorldMapVisualiser.get_node("Landmass").add_child(newMesh)
 				polygonPoints.clear()
 				
 				var x: float = slicedLine[2].to_float()
@@ -69,3 +69,31 @@ func _ready() -> void:
 				polygonPoints.append(Vector2(x, -y) * MapScale)
 				previousShapeID = currentShapeID
 				previousPartID = currentPartID
+				
+	# ----------------------------------------- Sorting out the built up areas -----------------------------------------
+	var builtUpAreaFile = FileAccess.open(BuiltUpAreaFilePath, FileAccess.READ)
+	previousShapeID = 0
+	previousPartID = 0
+	
+	# Getting the built up area data from the file
+	while !builtUpAreaFile.eof_reached():
+		var lineToRead = builtUpAreaFile.get_line()
+		var slicedLine = lineToRead.split(",")
+		
+		if slicedLine.size() == 3:
+			var currentShapeID = slicedLine[0].to_int()
+			
+			if currentShapeID == previousShapeID:
+				var x: float = slicedLine[1].to_float()
+				var y: float = slicedLine[2].to_float()
+				polygonPoints.append(Vector2(x, -y) * MapScale)
+
+			else:
+				var newMesh: ScalableMeshInstance2D = ScalableMeshInstance2D.new(polygonPoints, MapColours["BuiltUpArea"], MapLayers["BuiltUpArea"])
+				%WorldMapVisualiser.get_node("BuiltUpArea").add_child(newMesh)
+				polygonPoints.clear()
+				
+				var x: float = slicedLine[1].to_float()
+				var y: float = slicedLine[2].to_float()
+				polygonPoints.append(Vector2(x, -y) * MapScale)
+				previousShapeID = currentShapeID
