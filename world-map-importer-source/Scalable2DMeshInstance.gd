@@ -6,7 +6,6 @@
 ## 
 class_name ScalableMeshInstance2D extends MeshInstance2D
 
-
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # Member Variable Declaration
 # ---------------------------------------------------------------------------------------------------------------------------------------
@@ -17,6 +16,12 @@ class_name ScalableMeshInstance2D extends MeshInstance2D
 # ---------------------------------------------------------------------------------------------------------------------------------------
 func _init(_listOfPointsForMesh: PackedVector2Array):
 	var listOfPointTriangleIndexs = Geometry2D.triangulate_polygon(_listOfPointsForMesh)
+	
+	if listOfPointTriangleIndexs.size() == 0:
+		print("Invalid Shape")
+		self.queue_free()
+		return
+	
 	var testArray: PackedVector2Array = []
 	for triangleCount: int in listOfPointTriangleIndexs.size() / 3:
 		var triangleStartIndex = triangleCount * 3
@@ -32,7 +37,7 @@ func _init(_listOfPointsForMesh: PackedVector2Array):
 	arrays[Mesh.ARRAY_VERTEX] = testArray
 	
 	var arrayMesh = ArrayMesh.new()
-	arrayMesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLE_STRIP, arrays)
+	arrayMesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, arrays)
 	self.mesh = arrayMesh
 	
 # ---------------------------------------------------------------------------------------------------------------------------------------

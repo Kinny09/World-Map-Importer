@@ -5,7 +5,7 @@ extends Node2D
 func _ready() -> void:
 	var testArray: PackedVector2Array = [Vector2(-16,-20), Vector2(15, -10), Vector2(9, 18), Vector2(-37, -1), Vector2(-17, -6), Vector2(-43, -8)]
 	
-	var m = ScalableMeshInstance2D.new(testArray)
+	#var m = ScalableMeshInstance2D.new(testArray)
 	
 	
 	#var arrayMesh = ArrayMesh.new()
@@ -17,5 +17,5 @@ func _ready() -> void:
 	#arrayMesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLE_STRIP, arrays)
 	#var m = MeshInstance2D.new()
 	#m.mesh = arrayMesh
-	
-	self.add_child(m)
+	#
+	#self.add_child(m)
