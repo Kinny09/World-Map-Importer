@@ -97,3 +97,41 @@ func _ready() -> void:
 				var y: float = slicedLine[2].to_float()
 				polygonPoints.append(Vector2(x, -y) * MapScale)
 				previousShapeID = currentShapeID
+				
+	# ----------------------------------------- Sorting out the settlement labels -----------------------------------------
+	var settlementLabelFile = FileAccess.open(SettlementLabelFilePath, FileAccess.READ)
+	while !settlementLabelFile.eof_reached():
+		var lineToRead = settlementLabelFile.get_line()
+		var slicedLine = lineToRead.split(",")
+		
+		if slicedLine.size() == 3:
+			var x = slicedLine[0].to_float()
+			var y = slicedLine[1].to_float()
+			
+			var newLabel: ScalableLabel = ScalableLabel.new()
+			newLabel.ZoomLevelVisibleRange = Vector2i(17, 30)
+			newLabel.set_anchors_preset(Control.PRESET_CENTER)
+			newLabel.position = Vector2(x, -y)  * MapScale
+			newLabel.text = slicedLine[2]
+			newLabel.z_index = MapLayers["SettlementLabels"]
+			newLabel.add_theme_font_size_override("font_size", LabelSizes["settlement"])
+			%WorldMapVisualiser.get_node("SettlementLabels").add_child(newLabel)
+	
+	# ----------------------------------------- Sorting out the country labels -----------------------------------------
+	var countryLabelFile = FileAccess.open(CountryLabelFilePath, FileAccess.READ)
+	while !countryLabelFile.eof_reached():
+		var lineToRead = countryLabelFile.get_line()
+		var slicedLine = lineToRead.split(",")
+		
+		if slicedLine.size() == 3:
+			var x = slicedLine[1].to_float()
+			var y = slicedLine[2].to_float()
+			
+			var newLabel: ScalableLabel = ScalableLabel.new()
+			newLabel.set_anchors_preset(Control.PRESET_CENTER)
+			newLabel.grow_vertical = Control.GROW_DIRECTION_BOTH
+			newLabel.grow_horizontal = Control.GROW_DIRECTION_BOTH
+			newLabel.position = Vector2(x, -y)  * MapScale
+			newLabel.text = slicedLine[0]
+			newLabel.z_index = MapLayers["SettlementLabels"]
+			%WorldMapVisualiser.get_node("CountryLabels").add_child(newLabel)
