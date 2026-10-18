@@ -14,7 +14,9 @@ class_name ScalableMeshInstance2D extends MeshInstance2D
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # Constructor
 # ---------------------------------------------------------------------------------------------------------------------------------------
-func _init(_listOfPointsForMesh: PackedVector2Array):
+## Constructs the polygon from the given array of Vector2's. Also sets a colour depending on what you give it.
+func _init(_listOfPointsForMesh: PackedVector2Array, _meshColour: Color = Color.from_rgba8(255, 255, 255, 255), _zIndex: int = 0):
+	# ----------------------------------------- Constructing the mesh -----------------------------------------
 	var listOfPointTriangleIndexs = Geometry2D.triangulate_polygon(_listOfPointsForMesh)
 	
 	if listOfPointTriangleIndexs.size() == 0:
@@ -39,6 +41,15 @@ func _init(_listOfPointsForMesh: PackedVector2Array):
 	arrayMesh.add_surface_from_arrays(Mesh.PRIMITIVE_TRIANGLES, intermidateArray)
 	self.mesh = arrayMesh
 	
+	# ----------------------------------------- Setting the mesh properties -----------------------------------------
+	self.modulate = _meshColour
+	self.z_index = _zIndex
+	
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # CODE
 # ---------------------------------------------------------------------------------------------------------------------------------------
+func change_mesh_colour(newMeshColour: Color):
+	self.modulate = newMeshColour
+
+func change_z_index(newZIndex: int):
+	self.z_index = newZIndex
