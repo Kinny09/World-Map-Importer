@@ -10,17 +10,7 @@ script = ExtResource("1_gksvb")
 unique_name_in_owner = true
 oversampling_with_scale = 2
 
-[node name="Landmass" type="Node2D" parent="WorldMapVisualiser" unique_id=1386202038]
-
-[node name="CountryBorders" type="Node2D" parent="WorldMapVisualiser" unique_id=1953117168]
-
-[node name="BuiltUpArea" type="Node2D" parent="WorldMapVisualiser" unique_id=1631909509]
-
-[node name="SettlementLabels" type="Node2D" parent="WorldMapVisualiser" unique_id=993196103]
-
-[node name="CountryLabels" type="Node2D" parent="WorldMapVisualiser" unique_id=1761022237]
-
-[node name="Camera2D" type="Camera2D" parent="WorldMapVisualiser" unique_id=1948647982]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1948647982]
 limit_enabled = false
 script = ExtResource("2_a7mx8")
 CameraPanLimits = Dictionary[String, int]({

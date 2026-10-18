@@ -61,7 +61,7 @@ func _ready() -> void:
 			else:
 				var newMesh: ScalableMeshInstance2D = ScalableMeshInstance2D.new(polygonPoints, MapColours["Landmass"], MapLayers["Landmass"])
 				newMesh.add_outline_to_mesh(MapColours["CountryBorders"], 0.5)
-				%WorldMapVisualiser.get_node("Landmass").add_child(newMesh)
+				%WorldMapVisualiser.add_child(newMesh)
 				polygonPoints.clear()
 				
 				var x: float = slicedLine[2].to_float()
@@ -70,68 +70,13 @@ func _ready() -> void:
 				previousShapeID = currentShapeID
 				previousPartID = currentPartID
 				
-	# ----------------------------------------- Sorting out the built up areas -----------------------------------------
-	var builtUpAreaFile = FileAccess.open(BuiltUpAreaFilePath, FileAccess.READ)
-	previousShapeID = 0
-	previousPartID = 0
+	# ----------------------------------------- Saving the world map -----------------------------------------
+	var resourceToSave: PackedScene = PackedScene.new()
+	set_ownership(%WorldMapVisualiser, %WorldMapVisualiser)
+	resourceToSave.pack(%WorldMapVisualiser)
+	ResourceSaver.save(resourceToSave, "res://Output/SavedWorldMapVisualiser.scn")
 	
-	# Getting the built up area data from the file
-	while !builtUpAreaFile.eof_reached():
-		var lineToRead = builtUpAreaFile.get_line()
-		var slicedLine = lineToRead.split(",")
-		
-		if slicedLine.size() == 3:
-			var currentShapeID = slicedLine[0].to_int()
-			
-			if currentShapeID == previousShapeID:
-				var x: float = slicedLine[1].to_float()
-				var y: float = slicedLine[2].to_float()
-				polygonPoints.append(Vector2(x, -y) * MapScale)
-
-			else:
-				var newMesh: ScalableMeshInstance2D = ScalableMeshInstance2D.new(polygonPoints, MapColours["BuiltUpArea"], MapLayers["BuiltUpArea"])
-				%WorldMapVisualiser.get_node("BuiltUpArea").add_child(newMesh)
-				polygonPoints.clear()
-				
-				var x: float = slicedLine[1].to_float()
-				var y: float = slicedLine[2].to_float()
-				polygonPoints.append(Vector2(x, -y) * MapScale)
-				previousShapeID = currentShapeID
-				
-	# ----------------------------------------- Sorting out the settlement labels -----------------------------------------
-	var settlementLabelFile = FileAccess.open(SettlementLabelFilePath, FileAccess.READ)
-	while !settlementLabelFile.eof_reached():
-		var lineToRead = settlementLabelFile.get_line()
-		var slicedLine = lineToRead.split(",")
-		
-		if slicedLine.size() == 3:
-			var x = slicedLine[0].to_float()
-			var y = slicedLine[1].to_float()
-			
-			var newLabel: ScalableLabel = ScalableLabel.new()
-			newLabel.ZoomLevelVisibleRange = Vector2i(17, 30)
-			newLabel.set_anchors_preset(Control.PRESET_CENTER)
-			newLabel.position = Vector2(x, -y)  * MapScale
-			newLabel.text = slicedLine[2]
-			newLabel.z_index = MapLayers["SettlementLabels"]
-			newLabel.add_theme_font_size_override("font_size", LabelSizes["settlement"])
-			%WorldMapVisualiser.get_node("SettlementLabels").add_child(newLabel)
-	
-	# ----------------------------------------- Sorting out the country labels -----------------------------------------
-	var countryLabelFile = FileAccess.open(CountryLabelFilePath, FileAccess.READ)
-	while !countryLabelFile.eof_reached():
-		var lineToRead = countryLabelFile.get_line()
-		var slicedLine = lineToRead.split(",")
-		
-		if slicedLine.size() == 3:
-			var x = slicedLine[1].to_float()
-			var y = slicedLine[2].to_float()
-			
-			var newLabel: ScalableLabel = ScalableLabel.new()
-			newLabel.set_anchors_preset(Control.PRESET_CENTER)
-			newLabel.grow_vertical = Control.GROW_DIRECTION_BOTH
-			newLabel.grow_horizontal = Control.GROW_DIRECTION_BOTH
-			newLabel.position = Vector2(x, -y)  * MapScale
-			newLabel.text = slicedLine[0]
-			newLabel.z_index = MapLayers["SettlementLabels"]
-			%WorldMapVisualiser.get_node("CountryLabels").add_child(newLabel)
+func set_ownership(p_owner, node):    
+	for c in node.get_children():    
+		c.owner = p_owner
+		set_ownership(p_owner, c)

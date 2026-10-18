@@ -180,10 +180,10 @@ func _ready() -> void:
 		%WorldMapVisualiser.get_node("CountryLabels").add_child(newLabel)
 		
 	# ----------------------------------------- Saving the world map -----------------------------------------
-	#var resourceToSave: PackedScene = PackedScene.new()
-	#set_ownership(%WorldMapVisualiser, %WorldMapVisualiser)
-	#resourceToSave.pack(%WorldMapVisualiser)
-	#ResourceSaver.save(resourceToSave, "res://Output/SavedWorldMapVisualiser.scn")
+	var resourceToSave: PackedScene = PackedScene.new()
+	set_ownership(%WorldMapVisualiser, %WorldMapVisualiser)
+	resourceToSave.pack(%WorldMapVisualiser)
+	ResourceSaver.save(resourceToSave, "res://Output/SavedWorldMapVisualiser.scn")
 	
 func set_ownership(p_owner, node):    
 	for c in node.get_children():    
