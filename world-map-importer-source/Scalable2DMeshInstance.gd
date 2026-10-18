@@ -10,6 +10,11 @@ class_name ScalableMeshInstance2D extends MeshInstance2D
 # Member Variable Declaration
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # Standard Member Variables
+var ListOfPointsForMesh: PackedVector2Array
+var OutlinePoints: PackedVector2Array
+var OutlineColour: Color
+var OutlineWidth: float
+var test: PackedVector2Array
 
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # Constructor
@@ -44,6 +49,7 @@ func _init(_listOfPointsForMesh: PackedVector2Array, _meshColour: Color = Color.
 	# ----------------------------------------- Setting the mesh properties -----------------------------------------
 	self.modulate = _meshColour
 	self.z_index = _zIndex
+	ListOfPointsForMesh = _listOfPointsForMesh.duplicate()
 	
 # ---------------------------------------------------------------------------------------------------------------------------------------
 # CODE
@@ -53,3 +59,17 @@ func change_mesh_colour(newMeshColour: Color):
 
 func change_z_index(newZIndex: int):
 	self.z_index = newZIndex
+	
+func add_outline_to_mesh(outlineColour: Color = Color.from_rgba8(255, 255, 255, 255), outlineWidth: float = 1.0):
+	if ListOfPointsForMesh.size() >= 2:
+		OutlinePoints = ListOfPointsForMesh.duplicate()
+		OutlinePoints.append(ListOfPointsForMesh[0])
+		
+		OutlineColour = outlineColour
+		OutlineWidth = outlineWidth
+		queue_redraw()
+	
+func _draw():
+	if ListOfPointsForMesh.size() >= 2:
+		draw_polyline(ListOfPointsForMesh, OutlineColour, OutlineWidth)
+	

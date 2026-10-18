@@ -60,7 +60,7 @@ func _ready() -> void:
 
 			else:
 				var newMesh: ScalableMeshInstance2D = ScalableMeshInstance2D.new(polygonPoints, MapColours["Landmass"], MapLayers["Landmass"])
-				newMesh.name = "Country %s Part %s" % [previousShapeID, previousPartID]
+				newMesh.add_outline_to_mesh(MapColours["CountryBorders"], 3)
 				self.add_child(newMesh)
 				polygonPoints.clear()
 				
@@ -69,5 +69,3 @@ func _ready() -> void:
 				polygonPoints.append(Vector2(x, -y) * MapScale)
 				previousShapeID = currentShapeID
 				previousPartID = currentPartID
-	
-	# ----------------------------------------- Sorting out the country borders -----------------------------------------
